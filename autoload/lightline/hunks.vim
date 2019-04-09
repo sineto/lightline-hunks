@@ -22,6 +22,6 @@ function! lightline#hunks#composer()
       endif
     endfor
     let branch = fugitive#head()
-    return branch !=# '' ? compose.s:branch_symbol.branch : ''
+    return branch !=# '' ? compose . s:branch_symbol . branch : ''
   endif
 endfunction
