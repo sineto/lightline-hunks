@@ -2,7 +2,7 @@ if !get(g:, 'loaded_gitgutter', 0) && !exists('*fugitive#head')
   finish
 endif
 
-let s:branch_symbol = get(g:, 'lightline#hunks#branch_symbol', '⎇  ')
+let s:branch_symbol = get(g:, 'lightline#hunks#branch_symbol', ' ')
 let s:hunk_symbols = get(g:, 'lightline#hunks#hunk_symbols', ['+', '~', '-'])
 
 function! s:get_hunks_gitgutter()
