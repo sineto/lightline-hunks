@@ -4,9 +4,10 @@ endif
 
 let s:branch_symbol = get(g:, 'lightline#hunks#branch_symbol', ' ')
 let s:hunk_symbols = get(g:, 'lightline#hunks#hunk_symbols', ['+', '~', '-'])
+let s:exclude_filetypes = get(g:, 'lightline#hunks#exclude_filetypes', [])
 
 function! s:get_hunks_gitgutter()
-  if !get(g:, 'gitgutter_enabled', 0)
+  if !get(g:, 'gitgutter_enabled', 0) || index(s:exclude_filetypes, &filetype) >= 0
     return ''
   endif
   return GitGutterGetHunkSummary()
