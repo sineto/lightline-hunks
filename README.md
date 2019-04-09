@@ -18,7 +18,7 @@ Run `:so %` and `:PlugInstall`.
 ### Set to lightline status
 1. Register the components:
 ```viml
-let g:lightline.component_expand = {
+let g:lightline.component_function = {
   \  'lightline_hunks': 'lightline#hunks#composer',
   \ }
 ```
