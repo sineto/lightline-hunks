@@ -15,8 +15,10 @@ endfunction
 
 function! lightline#hunks#composer()
   let hunks = s:get_hunks_gitgutter()
-  let compose = ''
+
   if exists('*fugitive#head') && !empty(hunks)
+    let compose = ''
+
     for i in [0, 1, 2]
       if hunks[i] > 0
         let compose .= printf('%s%s', s:hunk_symbols[i], hunks[i]).' '
