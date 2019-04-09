@@ -20,9 +20,7 @@ function! lightline#hunks#composer()
     let compose = ''
 
     for i in [0, 1, 2]
-      if hunks[i] > 0
-        let compose .= printf('%s%s', s:hunk_symbols[i], hunks[i]).' '
-      endif
+      let compose .= printf('%s%s', s:hunk_symbols[i], hunks[i]).' '
     endfor
     let branch = fugitive#head()
     return branch !=# '' ? compose . s:branch_symbol . branch : ''
