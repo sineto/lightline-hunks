@@ -33,7 +33,7 @@ Symbol visible to the left of the branch. Default is `⎇ `.
 
 #### g:lightline#hunks#hunk_symbols
 Hunk count symbols. Default is `['+', '~', '-']` to `added, changed and deleted` respectivally.
-* set as a list: `ĺet g:lightline#hunks#hunk_symbol = ['+', '~', '-']`
+* set as a list: `ĺet g:lightline#hunks#hunk_symbols = ['+', '~', '-']`
 
 ## License
 [MIT License](LICENSE)
