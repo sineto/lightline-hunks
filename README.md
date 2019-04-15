@@ -18,7 +18,7 @@ Run `:so %` and `:PlugInstall`.
 ### Set to lightline status
 1. Register the components:
 ```viml
-let g:lightline.component_expand = {
+let g:lightline.component_function = {
   \  'lightline_hunks': 'lightline#hunks#composer',
   \ }
 ```
@@ -29,11 +29,21 @@ let g:lightline.active = { 'left': [['lightline_hunks']] }
 
 ### Global Variables
 #### g:lightline#hunks#branch_symbol
-Symbol visible to the left of the branch. Default is `⎇ `.
+Symbol visible to the left of the branch. Default is ` `.
 
 #### g:lightline#hunks#hunk_symbols
-Hunk count symbols. Default is `['+', '~', '-']` to `added, changed and deleted` respectivally.
-* set as a list: `ĺet g:lightline#hunks#hunk_symbol = ['+', '~', '-']`
+Hunk count symbols. Default is `['+', '~', '-']` to `added, changed and deleted` respectivelly. 
+##### Example:
+```viml
+let g:lightline#hunks#hunk_symbols = [ 'A:', 'M:', 'R:' ]
+```
+
+#### g:lightline#hunks#exclude_filetypes
+Prevent certain filetypes from showing Git information. Default is `[]`.
+##### Example:
+```viml
+let g:lightline#hunks#exclude_filetypes = [ 'startify', 'nerdtree', 'vista_kind', 'tagbar' ]
+```
 
 ## License
 [MIT License](LICENSE)
