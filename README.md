@@ -45,5 +45,12 @@ Prevent certain filetypes from showing Git information. Default is `[]`.
 let g:lightline#hunks#exclude_filetypes = [ 'startify', 'nerdtree', 'vista_kind', 'tagbar' ]
 ```
 
+#### g:lightline#hunks#only_branch
+When set with `1` will shows only branch name and symbol. Default is `0`.
+##### Example:
+```viml
+let g:lightline#hunks#only_branch = 1
+```
+
 ## License
 [MIT License](LICENSE)
