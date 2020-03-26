@@ -1,4 +1,4 @@
-if !get(g:, 'loaded_gitgutter', 0) && !exists('*fugitive#head')
+if !get(g:, 'loaded_gitgutter', 0) && !get(g:, 'loaded_fugitive', 0)
   finish
 endif
 
@@ -17,7 +17,7 @@ endfunction
 function! lightline#hunks#composer()
   let hunks = s:get_hunks_gitgutter()
 
-  if exists('*fugitive#head') && !empty(hunks)
+  if exists('*FugitiveHead') && !empty(hunks)
     let compose = ''
 
     for i in [0, 1, 2]
@@ -26,8 +26,7 @@ function! lightline#hunks#composer()
       endif
     endfor
     
-    let branch = fugitive#head()
-    
+    let branch = FugitiveHead()
     if branch ==# ''
       return ''
     endif
